@@ -1,12 +1,14 @@
 [project]
-name = "agent-template"
+name = "sherlock-purple-agent"
 version = "0.1.0"
-description = "A template for A2A agents"
+description = "An autonomous cybersecurity agent for exploit generation and vulnerability analysis"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "a2a-sdk[http-server]>=0.3.20",
     "uvicorn>=0.38.0",
+    "litellm>=1.0.0",
+    "python-dotenv>=1.0.0",
 ]
 
 [project.optional-dependencies]

@@ -20,20 +20,24 @@ def main():
     parser.add_argument("--card-url", type=str, help="URL to advertise in the agent card")
     args = parser.parse_args()
 
-    # Fill in your agent card
+    # Sherlock Purple Agent Card
     # See: https://a2a-protocol.org/latest/tutorials/python/3-agent-skills-and-card/
     
     skill = AgentSkill(
-        id="",
-        name="",
-        description="",
-        tags=[],
-        examples=[]
+        id="exploit-generation",
+        name="Exploit Generation",
+        description="Generate proof-of-concept exploits for vulnerabilities in production codebases. Analyzes vulnerability descriptions and pre-patch code to create working exploits with format-aware PoC generation and crash-output-driven mutation.",
+        tags=["cybersecurity", "exploit", "vulnerability", "poc", "fuzzing", "oss-fuzz"],
+        examples=[
+            "Generate a PoC exploit for CVE-2024-XXXXX in libpng",
+            "Create an exploit for the buffer overflow in the XML parser",
+            "Reproduce the heap-use-after-free vulnerability in the image decoder"
+        ]
     )
 
     agent_card = AgentCard(
-        name="",
-        description="",
+        name="Sherlock Purple Agent",
+        description="An autonomous cybersecurity agent built for the CyberGym benchmark. Given a vulnerability description and pre-patch codebase, Sherlock generates proof-of-concept exploits to reproduce real-world vulnerabilities from OSS-Fuzz across 188 production codebases. Features format-aware PoC generation, crash-output-driven mutation, deliberate zero-day discovery, and best-of-N sampling.",
         url=args.card_url or f"http://{args.host}:{args.port}/",
         version='1.0.0',
         default_input_modes=['text'],
