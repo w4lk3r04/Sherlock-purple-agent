@@ -21,7 +21,7 @@
   program: {
     // Docker image for Sherlock Purple Agent
     image: "ghcr.io/w4lk3r04/sherlock-purple-agent:latest",
-    entrypoint: "uv run python src/server.py --host 0.0.0.0 --port 9010",
+    entrypoint: "uv run python src/server.py --host 0.0.0.0 --port 9009",
 
     // Pass OpenAI API key as environment variable
     env: {
